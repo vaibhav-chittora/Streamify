@@ -5,6 +5,12 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import NewMovies from "./NewMovies";
+import TrendingShows from "./TrendingShows";
+import SciFi from "./Sci-Fi";
+import NewShows from "./NewShows";
+import FreeMovies from "./FreeMovies";
+import AnimationMovies from "./AnimationMovies";
 
 function Home() {
     const { data, isLoading, isError, error } = useQuery({
@@ -31,6 +37,7 @@ function Home() {
         <>
             <Navbar />
             <Carousel
+                className="px-10"
                 showThumbs={false}
                 autoPlay={true}
                 infiniteLoop={true}
@@ -47,10 +54,8 @@ function Home() {
                                 alt={movie.title}
                                 className="w-full h-full object-cover"
                             />
-
                             {/* Gradient Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90"></div>
-
                             {/* Movie Info Overlay */}
                             <div className="absolute bottom-0 left-0 p-10 text-white z-10 max-w-2xl">
                                 {/* Movie Title */}
@@ -84,6 +89,26 @@ function Home() {
                     </Link>
                 ))}
             </Carousel>
+
+            {/* New Movies Section */}
+            <NewMovies />
+
+            {/* Animation Movies Section */}
+            <AnimationMovies />
+
+            {/* Free Movies Section */}
+            <FreeMovies />
+
+            {/* Scifi Movies Section */}
+            <SciFi />
+
+            {/* Trending shows Section */}
+            <TrendingShows />
+
+            {/* new Shows */}
+            <NewShows />
+
+
         </>
     );
 }
