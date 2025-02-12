@@ -40,16 +40,16 @@ function Header() {
   return (
 
     <div className='flex items-center justify-between gap-8 p-5'>
-      <div className='flex items-center gap-10'>
+      <div className='flex items-center justify-center gap-10'>
 
         <div className='hidden md:flex gap-8'>
-          <img src={logo} className='w-10 md:w-16 object-cover' alt='logo' />
+          <img src={logo} className='w-10 md:w-10 mt-0 object-cover' alt='logo' />
           {menu.map((item, index) => (
             <HeaderItem name={item.name} Icon={item.icon} key={index} />
           ))}
         </div>
 
-        <div className='flex md:hidden gap-14'>
+        <div className='flex items-center justify-center md:hidden gap-14'>
           <img src={logo} className='w-10 md:w-16 object-cover' alt='logo' />
           {menu.map((item, index) => index < 3 && (
             <HeaderItem name={''} Icon={item.icon} key={index} />
